@@ -38,6 +38,17 @@ jobs:
             - name: Build with Next.js 🏗️
               run: npx next build
 
+            - name: Debug build output 🐛
+              run: |
+                  node -v
+                  npx next --version || true
+                  echo "ls project root:"
+                  ls -la
+                  echo "ls .next:"
+                  ls -la .next || true
+                  echo "ls out:"
+                  ls -la out || true
+            #
             - name: Upload artifact 📡
               uses: actions/upload-pages-artifact@v3
               with:
