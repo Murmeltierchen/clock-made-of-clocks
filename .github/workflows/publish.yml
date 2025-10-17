@@ -35,6 +35,11 @@ jobs:
               with:
                   static_site_generator: next
 
+            - name: Remove stray next.config.js 🧹
+              run: |
+                  echo "Removing next.config.js if present"
+                  rm -f next.config.js || true
+
             - name: Build with Next.js 🏗️
               run: npx next build
 
